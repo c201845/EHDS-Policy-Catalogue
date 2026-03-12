@@ -1,0 +1,84 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv-odrl: <https://w3id.org/dpv/dpv-odrl#> .
+@prefix eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/> .
+
+# catalogue definition as a collection of distinct policies
+
+ex:ehds-secondary-use-catalogue a odrl:Set ;
+    dct:title "Catalogue of Permissive Policies for EHDS Secondary Use" ;
+    odrl:uid ex:ehds-secondary-use-catalogue ;
+    odrl:hasPolicy 
+        ex:policy-research-education, 
+        ex:policy-public-health, 
+        ex:policy-innovation-ai, 
+        ex:policy-safety-quality .
+
+ex:policy-research-education a odrl:Offer ;
+    dct:title "Permissive Policy for Research and Education Purposes" ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:HealthcareScientificResearch,
+                eu-ehds:ImproveHealthcareEducation,
+                eu-ehds:PublicInterestRelatedToHealth,
+                eu-ehds:ImproveHealthcare 
+        ]
+    ] .
+
+ex:policy-public-health a odrl:Offer ;
+    dct:title "Permissive Policy for Public Health and Policy Governance" ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:PublicPolicyMaking,
+                eu-ehds:PublicHealthSurveillance,
+                eu-ehds:ProtectAgainstCrossBorderThreatsToHealth,
+                eu-ehds:ProvideHealthcareOfficialStatistics 
+        ]
+    ] .
+
+ex:policy-innovation-ai a odrl:Offer ;
+    dct:title "Permissive Policy for AI Training and Health Innovation" ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:TrainTestAndEvaluateAISystemsAlgorithms,
+                eu-ehds:TrainTestAndEvaluateHealthAlgorithms,
+                eu-ehds:TrainTestAndEvaluateHealthAppsAlgorithms,
+                eu-ehds:TrainTestAndEvaluateMedicalDevicesAlgorithms,
+                eu-ehds:DevelopPublicHealthProductsAndServices 
+        ]
+    ] .
+
+ex:policy-safety-quality a odrl:Offer ;
+    dct:title "Permissive Policy for Safety, Quality, and Regulatory Oversight" ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:SupportAuthoritiesRegulatoryActivities,
+                eu-ehds:EnsureQualitySafetyHealthcare,
+                eu-ehds:EnsureQualitySafetyMedicalDevices 
+        ]
+    ] .
