@@ -67,7 +67,7 @@ ex:policy-innovation-ai a odrl:Offer ;
     ] .
 
 ex:policy-safety-quality a odrl:Offer ;
-    dct:title "Permissive Policy for Safety, Quality, and Regulatory Oversight" ;
+    dct:title "Policy for safety, quality, and regulatory oversight" ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target eu-ehds:ElectronicHealthData ;
