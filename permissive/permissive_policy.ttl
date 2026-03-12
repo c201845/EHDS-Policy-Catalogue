@@ -5,9 +5,8 @@
 @prefix ex: <http://example.org/> .
 
 # catalogue definition as a collection of distinct policies
-
 ex:ehds-secondary-use-catalogue a odrl:Set ;
-    dct:title "Catalogue of Permissive Policies for EHDS Secondary Use" ;
+    dct:title "Catalogue of permissive policies for EHDS Secondary Use" ;
     odrl:uid ex:ehds-secondary-use-catalogue ;
     odrl:hasPolicy 
         ex:policy-research-education, 
@@ -16,7 +15,7 @@ ex:ehds-secondary-use-catalogue a odrl:Set ;
         ex:policy-safety-quality .
 
 ex:policy-research-education a odrl:Offer ;
-    dct:title "Permissive Policy for Research and Education Purposes" ;
+    dct:title "Policy for research and education" ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target eu-ehds:ElectronicHealthData ;
@@ -33,7 +32,7 @@ ex:policy-research-education a odrl:Offer ;
     ] .
 
 ex:policy-public-health a odrl:Offer ;
-    dct:title "Permissive Policy for Public Health and Policy Governance" ;
+    dct:title "Policy for public health and policy governance" ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target eu-ehds:ElectronicHealthData ;
@@ -50,7 +49,7 @@ ex:policy-public-health a odrl:Offer ;
     ] .
 
 ex:policy-innovation-ai a odrl:Offer ;
-    dct:title "Permissive Policy for AI Training and Health Innovation" ;
+    dct:title "Policy for AI training and health innovation" ;
     odrl:permission [
         odrl:action odrl:read ;
         odrl:target eu-ehds:ElectronicHealthData ;
