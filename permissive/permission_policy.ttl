@@ -9,7 +9,28 @@
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand eu-ehds:HealthcareScientificResearch,eu-ehds: EnsureQualitySafetyHealthcare,eu-ehds: PublicPolicyMaking, eu-ehds:SupportAuthoritiesRegulatoryActivities, eu-ehds:ImproveHealthcareEducation 
+            odrl:rightOperand eu-ehds: HealthcareScientificResearch,
+                              eu-ehds: EnsureQualitySafetyHealthcare,
+                              eu-ehds: PublicPolicyMaking, 
+                              eu-ehds: SupportAuthoritiesRegulatoryActivities, 
+                              eu-ehds: ImproveHealthcareEducation,
+                              eu-ehds: EnsureQualitySafetyMedicalDevices,
+                              eu-ehds: EnsureQualitySafetyMedicalDevices,
+                              eu-ehds: ProtectAgainstCrossBorderThreatsToHealth,
+                              eu-ehds: PublicHealthSurveillance,
+                              eu-ehds: PublicInterestRelatedToHealth,
+                              eu-ehds: EnsureQualitySafetyMedicalDevices,
+                              eu-ehds: PublicPolicyMaking,
+                              eu-ehds: SupportAuthoritiesRegulatoryActivities,
+                              eu-ehds: ProvideHealthcareOfficialStatistics,
+                              eu-ehds: ImproveHealthcareEducation,
+                              eu-ehds: DevelopPublicHealthProductsAndServices,
+                              eu-ehds: TrainTestAndEvaluateAISystemsAlgorithms,
+                              eu-ehds: TrainTestAndEvaluateHealthAlgorithms,
+                              eu-ehds: TrainTestAndEvaluateHealthAppsAlgorithms,
+                              eu-ehds: TrainTestAndEvaluateMedicalDevicesAlgorithms,
+                              eu-ehds: ImproveHealthcare,
+                                                         
         ] 
 
         # restrict data types for specific purposes
