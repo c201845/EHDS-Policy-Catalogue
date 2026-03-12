@@ -1,0 +1,76 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv-odrl: <https://w3id.org/dpv/dpv-odrl#> .
+@prefix eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#> .
+@prefix ex: <http://example.org/catalogue/> .
+
+# catalogue of prohibition policies
+# defining the catalogue
+ex:ehds-prohibited-use-catalogue a odrl: Collection;
+    dct:title "Catalogue of Prohibited EHDS Secondary Uses";
+    odrl:uid ex:ehds-prohibited-use-catalogue;
+    odrl:hasPolicy 
+        ex:policy-prohibit-commercial-marketing,
+        ex:policy-prohibit-detrimental-decisions,
+        ex:policy-prohibit-harmful-innovation.
+
+# pOLICY for commericial and advertising
+ex:policy-prohibit-commercial-marketing a odrl:Offer ;
+    dct:title "Prohibition of Marketing and Advertising Activities" ;
+    odrl:uid ex:policy-prohibit-commercial-marketing ;
+    odrl:prohibition [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:MarketingHealthActivities, 
+                eu-ehds:AdvertisingHealthActivities 
+        ]
+    ] .
+
+# policy for detrimental decisions in terms of insurance, finance
+# Targets uses that result in individual harm or exclusion.
+ex:policy-prohibit-detrimental-decisions a odrl:Offer ;
+    dct:title "Prohibition of Detrimental Individual Decision-Making" ;
+    odrl:uid ex:policy-prohibit-detrimental-decisions ;
+    odrl:prohibition [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:DetrimetalDecisionMaking,
+                eu-ehds:EmploymentDiscrimination,
+                eu-ehds:InsuranceBenefitExclusion,
+                eu-ehds:CreditContractExclusion,
+                eu-ehds:ContributionsDividendChange,
+                eu-ehds:LoansConditionModification,
+                eu-ehds:DiscriminationsUponHealthData
+        ]
+    ] .
+
+# Policy for harmful product development
+# Targets ethics and public order violations.
+ex:policy-prohibit-harmful-innovation a odrl:Offer ;
+    dct:title "Prohibition of Harmful or Unethical Product Development" ;
+    odrl:uid ex:policy-prohibit-harmful-innovation ;
+    odrl:prohibition [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand 
+                eu-ehds:HarmfulProductServiceDevelopment,
+                eu-ehds:AddictiveProductServiceDevelopment,
+                eu-ehds:PublicOrderContravention,
+                eu-ehds:HumanHealthRisk,
+                eu-ehds:EthicalProvisionConflict 
+        ]
+    ] .
