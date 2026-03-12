@@ -1,4 +1,4 @@
-@PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+@prefix eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
 
 <http://example.org/policy/sec-use-research> a odrl:Set ;
     odrl:uid <http://example.org/policy/sec-use-research> ;
