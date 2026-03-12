@@ -14,7 +14,7 @@ ex:ehds-prohibited-use-catalogue a odrl: Collection;
         ex:policy-prohibit-detrimental-decisions,
         ex:policy-prohibit-harmful-innovation.
 
-# pOLICY for commericial and advertising
+# policy for commericial and advertising
 ex:policy-prohibit-commercial-marketing a odrl:Offer ;
     dct:title "Prohibition of Marketing and Advertising Activities" ;
     odrl:uid ex:policy-prohibit-commercial-marketing ;
