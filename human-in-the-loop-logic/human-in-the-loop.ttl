@@ -1,0 +1,44 @@
+@prefix eu-ehds:<https://w3id.org/dpv/legal/eu/ehds#>.
+@prefix odrl: <http://www.w3.org/ns/odrl/2/>.
+@prefix dpv: <https://w3id.org/dpv#>.
+@prefix dpv-odrl: <https://w3id.org/dpv/dpv-odrl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://example.org/policy/conflict-resolution> a odrl:Policy ;
+    odrl:description 'Human intervention required for Legal Compliance when an Opt-Out conflict occurs.';
+    
+    odrl:obligation [
+        a odrl:Duty;
+        odrl:assigner <http://example.org/party/HDAB>;
+        odrl:assignee <http://example.org/party/DataProtectionOfficer>;
+        odrl:action odrl: inform; # or maybe here goes the dpv:HumanInvolvementForIntervention ??
+        # SPECIFIC INVOLVEMENT
+        odrl:constraint [
+            odrl:leftOperand dpv:HumanInvolvement;
+            odrl:operator odrl:eq;
+            odrl:rightOperand dpv:HumanInvolvementForIntervention
+        ] ;
+        
+        # Evaluate the 'Research' purpose against the 'Opt-out' right
+        odrl:refinement [
+            odrl:leftOperand dpv:hasPurpose;
+            odrl:operator odrl:eq;
+            odrl:rightOperand eu-ehds:HealthcareScientificResearch;
+            odrl:and [
+                odrl:leftOperand sotw:describesFeature;
+                odrl:operator odrl:eq;
+                odrl:rightOperand :OptOut;
+                odrl:and [
+                    odrl:leftOperand sotw:value;
+                    odrl:operator odrl:eq;
+                    odrl:rightOperand "true"^^xsd:boolean 
+                ]
+            ]
+        ] ;
+        #if  the human does not intervene, the Opt-out persists and access is not allowed
+        odrl:consequence [
+            a odrl:Duty;
+            odrl:action odrl:remedy;
+            rdfs:comment 'Health data access not possible until a human confirms opt-out status'
+    ];
+] .
