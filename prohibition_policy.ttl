@@ -1,0 +1,17 @@
+@PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+
+<http://example.org/policy/sec-use-research> a odrl:Set ;
+    odrl:uid <http://example.org/policy/sec-use-research> ;
+    odrl:prohibition [
+        odrl:action odrl:read ;
+        odrl:target eu-ehds:ElectronicHealthData ;
+        odrl:assigner <http://example.org/party/HDAB>  ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isAnyOf ;
+            odrl:rightOperand eu-ehds: DetrimetalDecisionMaking,eu-ehds: 
+                                       EmploymentDiscrimination,eu-ehds: MarketingHealthActivities, 
+                                       eu-ehds: AdvertisingHealthActivities, 
+                                       eu-ehds:HarmfulProductServiceDevelopment 
+                                       ] 
+    ] .
