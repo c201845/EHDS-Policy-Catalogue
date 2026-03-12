@@ -9,9 +9,22 @@
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand eu-ehds: DetrimetalDecisionMaking,eu-ehds: 
-                                       EmploymentDiscrimination,eu-ehds: MarketingHealthActivities, 
-                                       eu-ehds: AdvertisingHealthActivities, 
-                                       eu-ehds:HarmfulProductServiceDevelopment 
-                                       ] 
+            odrl:rightOperand eu-ehds: DetrimetalDecisionMaking,
+                              eu-ehds: EmploymentDiscrimination,
+                              eu-ehds: MarketingHealthActivities, 
+                              eu-ehds: AdvertisingHealthActivities, 
+                              eu-ehds: HarmfulProductServiceDevelopment,
+                              eu-ehds: InsuranceBenefitExclusion,
+                              eu-ehds: CreditContractExclusion, 
+                              eu-ehds: ContributionsDividendChange, 
+                              eu-ehds: LoansConditionModification,
+                              eu-ehds: InsuranceBenefitExclusion,
+                              eu-ehds: DiscriminationsUponHealthData, 
+                              eu-ehds: AddictiveProductServiceDevelopment, 
+                              eu-ehds: LoansConditionModification,
+                              eu-ehds: PublicOrderContravention, 
+                              eu-ehds: HumanHealthRisk,
+                              eu-ehds: EthicalProvisionConflict,
+                                 
+            ] 
     ] .
