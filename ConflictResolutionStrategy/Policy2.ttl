@@ -1,0 +1,20 @@
+@PREFIX dpv: <https://w3id.org/dpv#>
+@PREFIX dpv-odrl: <https://w3id.org/dpv/mappings/odrl#>
+@PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+@prefix pd: <https://w3id.org/dpv/pd#> .
+@PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+
+<http://example.org/policy:ehds:0002> a odrl:Set ;
+    odrl:profile dpv-odrl: ;
+    odrl:conflict :semanticSubsumption ;
+    odrl:prohibition [
+        odrl:target pd:FacialExpression ;
+        odrl:action odrl:use ;
+        odrl:assigner <http://example.org/party/DataHolder> ; 
+        odrl:assignee <http://example.org/party/DataUser> ;
+        odrl:constraint [
+            odrl:leftOperand dpv-odrl:Purpose ;
+            odrl:operator odrl:isA ;
+            odrl:rightOperand eu-ehds:TrainTestAndEvaluateMedicalDevicesAlgorithms 
+        ] 
+    ] .
