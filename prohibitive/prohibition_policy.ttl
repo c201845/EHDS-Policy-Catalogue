@@ -1,6 +1,6 @@
-@PREFIX dpv-odrl: <https://w3id.org/dpv/mappings/odrl#>
-@PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
-@PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dpv-odrl: <https://w3id.org/dpv/mappings/odrl#>
+PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 
 <http://example.org/policy/sec-use-research> a odrl:Set ;
     odrl:uid <http://example.org/policy/sec-use-research> ;
