@@ -4,7 +4,7 @@ This repository provides a machine-readable **ODRL + DPV Policy Catalogue** desi
 
 ## 📂 Repository Structure
 
-- **/permissive**: Contains template for policies defining authorized secondary use purposes and permitted data categories.
-- **/prohibitive**: Contains template for policies for prohibited uses and individual data subject opt-outs.
-- **/opt-out-logic**: Contains template Opt-out for specific secondary use purpose
+- **/permissive**: Contains policy for authorized secondary use purposes and permitted data categories.
+- **/prohibitive**: Contains policy for prohibited uses
+- **/opt-out-logic**: Contains Opt-out policy for specific secondary use purpose
 - **/human-in-the-loop-logic**
