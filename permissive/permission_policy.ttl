@@ -1,11 +1,20 @@
-@prefix eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+PREFIX dpv-odrl: <https://w3id.org/dpv/mappings/odrl#>
+PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 
 <http://example.org/policy/sec-use-research> a odrl:Set ;
     odrl:uid <http://example.org/policy/sec-use-research> ;
+    odrl:profile dpv-odrl: ;
     odrl:permission [
         odrl:action odrl:read ;
-        odrl:target eu-ehds:ElectronicHealthData ;
-        odrl:assigner <http://example.org/party/HDAB>  ;
+        odrl:target [ 
+            a odrl:AssetCollection ;
+            odrl:source <http://example.org/data/health> ;
+            odrl:refinement [
+                odrl:leftOperand dpv-odrl:PersonalData ;
+                odrl:operator odrl:isAnyOf ;
+                odrl:rightOperand eu-ehds:GenomicData, eu-ehds:BiobankData, eu-ehds:EHRData ]] ;
+        odrl:assigner <http://example.org/party/HDAB> ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
@@ -29,16 +38,6 @@
                               eu-ehds: TrainTestAndEvaluateHealthAlgorithms,
                               eu-ehds: TrainTestAndEvaluateHealthAppsAlgorithms,
                               eu-ehds: TrainTestAndEvaluateMedicalDevicesAlgorithms,
-                              eu-ehds: ImproveHealthcare,
-                                                         
+                              eu-ehds: ImproveHealthcare
         ] 
-
-        # restrict data types for specific purposes
-        odrl:constraint [
-            odrl:leftOperand dpv-odrl:Data ;
-            odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand eu-ehds:GenomicData 
-                            eu-ehds:BiobankData
-                            eu-ehds:EHRData
-        ]      
-    ] .
+    ].
