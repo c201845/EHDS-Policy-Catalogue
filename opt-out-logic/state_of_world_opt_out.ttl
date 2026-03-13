@@ -1,13 +1,16 @@
-@prefix sotw: <https://w3id.org/force/sotw#> .
+PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX sotw: <https://w3id.org/force/sotw#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.org/request> a sotw:EvaluationRequest ;
-    sotw:evaluatedParty <http://example.org/request> ;
+    sotw:evaluatedParty <http://example.org/party/alice> ;
     sotw:evaluatedAction odrl:read ;
-    sotw:evaluatedTarget eu-ehds:ElectronicHealthData ;
+    sotw:evaluatedTarget eu-ehds:EHRData ;
     sotw:requestParameter [
         sotw:describesFeature :OptOut ;
         sotw:value "true"^^xsd:boolean
     ] , [
         sotw:describesFeature sotw:Purpose ;
         sotw:value eu-ehds:HealthcareScientificResearch
-] .
+    ] .
