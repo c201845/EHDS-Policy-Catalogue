@@ -12,27 +12,27 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
             odrl:source <http://example.org/data/health> ;
             odrl:refinement [
                 odrl:leftOperand dpv-odrl:PersonalData ;
-                odrl:operator odrl:isAnyOf ;
-                odrl:rightOperand eu-ehds:GenomicData, eu-ehds:BiobankData, eu-ehds:EHRData ]] ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand eu-ehds:ElectronicHealthData ]] ;
         odrl:assigner <http://example.org/party/HDAB> ;
         odrl:constraint [
             odrl:leftOperand dpv-odrl:Purpose ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand eu-ehds: DetrimetalDecisionMaking,
-                              eu-ehds: EmploymentDiscrimination,
-                              eu-ehds: MarketingHealthActivities, 
-                              eu-ehds: AdvertisingHealthActivities, 
-                              eu-ehds: HarmfulProductServiceDevelopment,
-                              eu-ehds: InsuranceBenefitExclusion,
-                              eu-ehds: CreditContractExclusion, 
-                              eu-ehds: ContributionsDividendChange, 
-                              eu-ehds: LoansConditionModification,
-                              eu-ehds: InsuranceBenefitExclusion,
-                              eu-ehds: DiscriminationsUponHealthData, 
-                              eu-ehds: AddictiveProductServiceDevelopment, 
-                              eu-ehds: LoansConditionModification,
-                              eu-ehds: PublicOrderContravention, 
-                              eu-ehds: HumanHealthRisk,
-                              eu-ehds: EthicalProvisionConflict
+            odrl:rightOperand eu-ehds:DetrimetalDecisionMaking,
+                              eu-ehds:EmploymentDiscrimination,
+                              eu-ehds:MarketingHealthActivities, 
+                              eu-ehds:AdvertisingHealthActivities, 
+                              eu-ehds:HarmfulProductServiceDevelopment,
+                              eu-ehds:InsuranceBenefitExclusion,
+                              eu-ehds:CreditContractExclusion, 
+                              eu-ehds:ContributionsDividendChange, 
+                              eu-ehds:LoansConditionModification,
+                              eu-ehds:InsuranceBenefitExclusion,
+                              eu-ehds:DiscriminationsUponHealthData, 
+                              eu-ehds:AddictiveProductServiceDevelopment, 
+                              eu-ehds:LoansConditionModification,
+                              eu-ehds:PublicOrderContravention, 
+                              eu-ehds:HumanHealthRisk,
+                              eu-ehds:EthicalProvisionConflict
         ] 
     ].

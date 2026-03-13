@@ -1,8 +1,9 @@
-@PREFIX dpv: <https://w3id.org/dpv#>
-@PREFIX dpv-odrl: <https://w3id.org/dpv/mappings/odrl#>
-@PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-odrl: <https://w3id.org/dpv/mappings/odrl#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix pd: <https://w3id.org/dpv/pd#> .
-@PREFIX eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#>
+@prefix eu-ehds: <https://w3id.org/dpv/legal/eu/ehds#> .
+@prefix : <> .
 
 <http://example.org/policy:ehds:0002> a odrl:Set ;
     odrl:profile dpv-odrl: ;
