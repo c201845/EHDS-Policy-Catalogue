@@ -6,3 +6,4 @@
 - **/prohibitive**: Contains policy for prohibited uses
 - **/opt-out-logic**: Contains Opt-out policy for specific secondary use purpose
 - **/human-in-the-loop-logic**: Contains policy with constraint of human oversight for final decision-making on data usage control
+- **/ConflictResolutionStrategy**: Contains conflict strategy resolution policies, and a new strategy approach :semanticSubsumption to resolve occuring conflicts.
