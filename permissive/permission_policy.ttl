@@ -24,7 +24,6 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
                               eu-ehds: SupportAuthoritiesRegulatoryActivities, 
                               eu-ehds: ImproveHealthcareEducation,
                               eu-ehds: EnsureQualitySafetyMedicalDevices,
-                              eu-ehds: EnsureQualitySafetyMedicalDevices,
                               eu-ehds: ProtectAgainstCrossBorderThreatsToHealth,
                               eu-ehds: PublicHealthSurveillance,
                               eu-ehds: PublicInterestRelatedToHealth,
