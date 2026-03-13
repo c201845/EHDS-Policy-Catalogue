@@ -1,0 +1,20 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-odrl: <https://w3id.org/dpv/mappings/odrl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/policy/ehds-catalog> a odrl:Set ;
+    dct:title "EHDS Secondary Use ODRL+DPV Policy Catalog" ;
+    odrl:profile dpv-odrl: ;
+    
+    odrl:hasPolicy <http://example.org/policy/sec-use-research> ,
+                   <http://example.org/policy/sec-use-prohibited> .
+
+<http://example.org/policy/sec-use-research> a odrl:Set ;
+    dct:title "Permissive Secondary Use Policy" ;
+    dct:source <./permissive/permissive.ttl> .
+
+<http://example.org/policy/sec-use-prohibited> a odrl:Set ;
+    dct:title "Prohibited Secondary Use Policy" ;
+    dct:source <./prohibitive/prohibitive_policy.ttl> .
